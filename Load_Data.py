@@ -18,7 +18,8 @@ def load_train_data():
     images = images / 255.0
     labels = labels[1:]
     
-    return images, labels
+    train_data = {'xtrain':images, 'ytrain':labels}
+    return train_data
 
 def load_test_data():
     images = np.zeros((1, 3072))
@@ -33,7 +34,8 @@ def load_test_data():
     images = images / 255.0
     labels = labels[1:]
 
-    return images, labels
+    test_data = {'xtest':images, 'ytest':labels}
+    return test_data
 
 def get_labels():
     with open(path + '/' + data[0], 'rb') as fo:
